@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace KeyboardLightingParser
 {
-    public enum LightingScheme
+    public enum LightingEffect
     {
-        Static,
-        Wave,
-        Disco
+        UNKNOWN,
+        STATIC,
+        WAVE,
+        DISCO
     }
 
     class KeyConfiguration
     {
         private string m_key;
-        private LightingScheme m_lightingScheme; // Enum ? 
-        private string m_colors;
+        private LightingEffect m_lightingScheme;
+        private List<string> m_colors;
 
-        public KeyConfiguration(string _key, LightingScheme _lightingScheme, string _colors)
+        public KeyConfiguration(string _key, LightingEffect _lightingScheme, List<string> _colors)
         {
             m_key = _key;
             m_lightingScheme = _lightingScheme;
@@ -28,13 +29,20 @@ namespace KeyboardLightingParser
 
         public string Key { get => m_key; set => m_key = value; }
 
-        public string Colors { get => m_colors; set => m_colors = value; }
+        public List<string> Colors { get => m_colors; set => m_colors = value; }
 
-        public  LightingScheme LightingScheme1 { get => m_lightingScheme; set => m_lightingScheme = value; }
+        public  LightingEffect LightingScheme1 { get => m_lightingScheme; set => m_lightingScheme = value; }
 
         override public string ToString()
         {
-            return Key + ", " + m_lightingScheme.ToString() + ", [" + Colors + "]";
+            string output = "";
+            output = Key + ", " + m_lightingScheme.ToString() + ", [";
+            foreach(var color in Colors)
+            {
+                output += color;
+            }
+            output += "]";
+            return output;
         }
     }
 }

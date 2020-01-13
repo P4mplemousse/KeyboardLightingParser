@@ -14,6 +14,20 @@ namespace KeyboardLightingParser
 
             // Parse input file
 
+            string path = "c:/test.txt";
+            try
+            {
+
+                FileParser parser = new FileParser();
+                parser.Parse(path);
+
+                Console.Write(parser.ToString());
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex.Message + "\n");
+            }
+
             // strict scheme
             // letters
             // color scheme
