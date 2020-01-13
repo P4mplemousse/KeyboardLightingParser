@@ -1,11 +1,11 @@
-Keyboard Lighting Parser
+# Keyboard Lighting Parser
 
-# Purpose
+## Purpose
 This script parse user input for the custom Keyboard Lighting feature and prompt if any syntax error occurs.
 
 >SteelSeries RGB keyboards have always featured eye-catching lighting effects. And although we very much enjoy handcrafting these lighting effects ourselves, we constantly receive requests from our most passionate and creative users, that they want a way to create their ​own awesome lighting effects. Welp, that day is almost upon us. We’ve already built a lighting engine that allows anyone to create custom lighting effects just by entering simple text strings into SteelSeries Engine. 
 
-# How to build
+## How to build
 This program is a console application that has been built with Visual Studio 17 v 15.9.15.
 
 It depend on the .Net framework 4.6.1.
@@ -17,7 +17,7 @@ To build :
 
 Once build, binaries can be found in */KeyboardLightingParser/bin/[debug|release]*.
 
-# Usage
+## Usage
 Double click on the exe or launch it from cmd/Powershell.
 
 The program will ask for a file path or a folder path.
@@ -38,7 +38,7 @@ If any error occurs, it will display the error report like this :
 
     INVALID : Static effects are single color only
 
-# Notes
+## Notes
 The project contain the *test_files* folder. 
 
 This folder is here for testing purpose and allow quick testing with several file.
