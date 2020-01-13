@@ -4,28 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace KeyboardLightingParser
 {
-    class KeysParser
+    class KeysParser : Parser
     {
         public List<string> Parse(string line)
         {
             List<string> output = new List<string>();
-            string tempLine = line.ToLower();
-            tempLine = tempLine.Replace(" ", string.Empty);
-
-            // only 'a' or 'a,b,c,d' likes inputs
-            Regex test = new Regex(@"(^[a-z]$)|(^(([a-z],)*)[a-z]$)");
-            if (test.IsMatch(tempLine))
-            {
-                var keys = tempLine.Split(',');
-                foreach(var key in keys)
-                {
-                    if (!output.Contains(key))
-                    {
-                        output.Add(key);
-                    }
-                }
-            }
-            else
+            output = ParseRegex(line, @"(^[a-z]$)|(^(([a-z],)*)[a-z]$)");
+            if (output.Count == 0)
             {
                 throw new InvalidDataException("INVALID : Invalid keys input");
             }
