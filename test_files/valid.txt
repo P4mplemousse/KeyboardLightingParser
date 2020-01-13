@@ -1,0 +1,12 @@
+a,b,c,d
+Static
+blue
+a,f,j, h, l
+Disco
+Red, blue, green
+f, f, f, m
+Wave
+Brown, yellow, cyan
+a
+Wave
+Black

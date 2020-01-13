@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace KeyboardLightingParser
 {
@@ -39,8 +35,11 @@ namespace KeyboardLightingParser
             output = Key + ", " + m_lightingScheme.ToString() + ", [";
             foreach(var color in Colors)
             {
-                output += color;
+                output += color + ", ";
             }
+
+            output = output.TrimEnd(',', ' ');
+
             output += "]";
             return output;
         }

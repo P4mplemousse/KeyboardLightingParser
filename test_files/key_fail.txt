@@ -1,0 +1,3 @@
+aaa,bddsf,c,d,
+Static
+green

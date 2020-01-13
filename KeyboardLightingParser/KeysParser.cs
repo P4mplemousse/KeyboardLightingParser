@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace KeyboardLightingParser
 {
@@ -31,7 +27,7 @@ namespace KeyboardLightingParser
             }
             else
             {
-                throw new InvalidDataException("Invalid keys input");
+                throw new InvalidDataException("INVALID : Invalid keys input");
             }
 
             return output;

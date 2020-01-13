@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace KeyboardLightingParser
 {
@@ -16,7 +12,7 @@ namespace KeyboardLightingParser
             string tempLine = line.ToLower();
             tempLine = tempLine.Replace(" ", string.Empty);
 
-            // only 'a' or 'a,b,c,d' likes inputs
+            // only 'red' or 'red,green,blue' likes inputs
             Regex test = new Regex(@"(^[a-z]*$)|(^((([a-z]*,)*)[a-z])*$)");
             if (test.IsMatch(tempLine))
             {
@@ -31,7 +27,7 @@ namespace KeyboardLightingParser
             }
             else
             {
-                throw new InvalidDataException("Invalid colors input");
+                throw new InvalidDataException("INVALID : Invalid colors input");
             }
 
             return output;

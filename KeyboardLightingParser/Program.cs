@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace KeyboardLightingParser
 {
@@ -10,32 +7,56 @@ namespace KeyboardLightingParser
     {
         static void Main(string[] args)
         {
-            // Take input file, check file validity
+            Console.Write("Keyboard lighting effects file(s) path (file or folder): ");
+            var path = Console.ReadLine();
 
-            // Parse input file
-
-            string path = "c:/test.txt";
-            try
+            if (File.Exists(path))
             {
+                try
+                {
 
-                FileParser parser = new FileParser();
-                parser.Parse(path);
+                    FileParser parser = new FileParser();
+                    parser.Parse(path);
 
-                Console.Write(parser.ToString());
+                    Console.Write(path + " results : \n");
+                    Console.Write(parser.ToString() + "\n");
+                }
+                catch (Exception ex)
+                {
+                    Console.Write(path + " : \n" + ex.Message + "\n\n");
+                }
+
+                Console.Write("Complete. Press any key to quit\n");
+                Console.Read();
             }
-            catch(Exception ex)
+            else if (Directory.Exists(path))
             {
-                Console.Write(ex.Message + "\n");
+                var files = Directory.EnumerateFiles(path);
+                foreach(var filePath in files)
+                {
+                    try
+                    {
+
+                        FileParser parser = new FileParser();
+                        parser.Parse(filePath);
+
+                        Console.Write(filePath + " results : \n");
+                        Console.Write(parser.ToString() + "\n");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Write(filePath + " : \n" + ex.Message + "\n\n");
+                    }
+                }
+
+                Console.Write("Complete. Press any key to quit\n");
+                Console.Read();
             }
-
-            // strict scheme
-            // letters
-            // color scheme
-            // colors
-
-            // a, b, c, d // possible duplication !
-            // Static | Wave, Disco // strict values
-            // orange, red, blue // whatever we want ? -> possible to limit value later
+            else
+            {
+                Console.Write("File does not exist !!!\n Press any key to quit\n");
+                Console.Read();
+            }
         }
     }
 }

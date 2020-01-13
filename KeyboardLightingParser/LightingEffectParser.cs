@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KeyboardLightingParser
 {
@@ -17,7 +13,7 @@ namespace KeyboardLightingParser
                 effect = (LightingEffect) Enum.Parse(typeof(LightingEffect), tempLine);
             else
             {
-                throw new InvalidDataException("Invalid lighting effect input");
+                throw new InvalidDataException("INVALID : Invalid lighting effect input");
             }
 
             return effect;

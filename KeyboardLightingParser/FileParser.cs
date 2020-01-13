@@ -7,10 +7,6 @@ namespace KeyboardLightingParser
     {
         private Dictionary<string, KeyConfiguration> m_keys = new Dictionary<string, KeyConfiguration>();
 
-        public FileParser()
-        {
-        }
-
         public string Parse(string filePath)
         {
             string output = "";
@@ -47,7 +43,7 @@ namespace KeyboardLightingParser
 
         override public string ToString()
         {
-            string output = ""; // improve with stringChain
+            string output = "";
             foreach (var config in m_keys)
             {
                 output += config.Value.ToString() + "\n";
@@ -95,7 +91,7 @@ namespace KeyboardLightingParser
                     var effect = lightingEffectParser.Parse(line);
                     if (effect == LightingEffect.UNKNOWN)
                     {
-                        throw new InvalidDataException("Effect is missing from the input file");
+                        throw new InvalidDataException("INVALID : Effect is missing from the input file");
                     }
                     return effect;
                 }
