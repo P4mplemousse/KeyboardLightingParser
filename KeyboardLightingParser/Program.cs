@@ -14,7 +14,6 @@ namespace KeyboardLightingParser
             {
                 try
                 {
-
                     FileParser parser = new FileParser();
                     parser.Parse(path);
 
@@ -36,7 +35,6 @@ namespace KeyboardLightingParser
                 {
                     try
                     {
-
                         FileParser parser = new FileParser();
                         parser.Parse(filePath);
 

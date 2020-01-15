@@ -39,8 +39,8 @@ If any error occurs, it will display the error report like this :
     INVALID : Static effects are single color only
 
 ## Notes
-The project contain the *test_files* folder. 
+The project contains the *test_files* folder. 
 
 This folder is here for testing purpose and allow quick testing with several file.
 
-It contain some sample.
+It contains some sample files.

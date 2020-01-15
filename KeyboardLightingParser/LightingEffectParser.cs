@@ -3,7 +3,7 @@ using System.IO;
 
 namespace KeyboardLightingParser
 {
-    class LightingEffectParser
+    class LightingEffectParser : Parser
     {
         public LightingEffect Parse(string line)
         {
